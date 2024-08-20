@@ -2,32 +2,234 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  :root {
+    /* Base Color */
+    --color-main-0: 0 0% 100%;
+    --color-main-50: 210 23% 98%;
+    --color-main-100: 220 16% 96%;
+    --color-main-200: 220 18% 91%;
+    --color-main-300: 220 18% 84%;
+    --color-main-400: 220 14% 65%;
+    --color-main-500: 220 10% 46%;
+    --color-main-600: 220 13% 34%;
+    --color-main-700: 220 20% 27%;
+    --color-main-800: 220 30% 17%;
+    --color-main-900: 220 40% 11%;
+    --color-main-950: 220 40% 11%;
+    --color-main: 220 40% 11%;
+
+    /* Theme Color */
+    --color-primary-50: 210 100% 97%;
+    --color-primary-100: 210 92% 93%;
+    --color-primary-200: 210 96% 87%;
+    --color-primary-300: 210 96% 78%;
+    --color-primary-400: 210 95% 68%;
+    --color-primary-500: 210 91% 60%;
+    --color-primary-600: 220 82% 53%;
+    --color-primary-700: 220 73% 48%;
+    --color-primary-800: 220 73% 40%;
+    --color-primary-900: 220 64% 33%;
+    --color-primary-950: 220 60% 21%;
+  }
+  .dark {
+    /* Base Color */
+    --color-main: 0 0% 100%;
+    --color-main-950: 210 23% 98%;
+    --color-main-900: 220 16% 96%;
+    --color-main-800: 220 18% 91%;
+    --color-main-700: 220 18% 84%;
+    --color-main-600: 220 14% 65%;
+    --color-main-500: 220 10% 46%;
+    --color-main-400: 220 13% 34%;
+    --color-main-300: 220 20% 27%;
+    --color-main-200: 220 30% 17%;
+    --color-main-100: 220 30% 17%;
+    --color-main-50: 220 30% 17%;
+    --color-main-0: 220 30% 17%;
+
+    /* Theme Color */
+    --color-primary-950: 210 100% 97%;
+    --color-primary-900: 210 92% 93%;
+    --color-primary-800: 210 96% 87%;
+    --color-primary-700: 210 96% 78%;
+    --color-primary-600: 210 95% 68%;
+    --color-primary-500: 210 91% 60%;
+    --color-primary-400: 220 82% 53%;
+    --color-primary-300: 220 73% 48%;
+    --color-primary-200: 220 73% 40%;
+    --color-primary-100: 220 64% 33%;
+    --color-primary-50: 220 60% 21%;
+  }
+  .theme-violet {
+    /* Theme Color */
+    --color-primary-50: 255 100% 98%;
+    --color-primary-100: 255 100% 96%;
+    --color-primary-200: 255 100% 92%;
+    --color-primary-300: 255 100% 88%;
+    --color-primary-400: 260 89% 76%;
+    --color-primary-500: 260 78% 66%;
+    --color-primary-600: 260 69% 58%;
+    --color-primary-700: 260 72% 50%;
+    --color-primary-800: 260 64% 42%;
+    --color-primary-900: 260 68% 35%;
+    --color-primary-950: 260 73% 23%;
+  }
+  .theme-violet.dark {
+    /* Theme Color */
+    --color-primary-950: 255 100% 98%;
+    --color-primary-900: 255 100% 96%;
+    --color-primary-800: 255 100% 92%;
+    --color-primary-700: 255 100% 88%;
+    --color-primary-600: 260 89% 76%;
+    --color-primary-500: 260 78% 66%;
+    --color-primary-400: 260 69% 58%;
+    --color-primary-300: 260 72% 50%;
+    --color-primary-200: 260 64% 42%;
+    --color-primary-100: 260 68% 35%;
+    --color-primary-50: 260 73% 23%;
+  }
+  .theme-pink {
+    /* Theme Color */
+    --color-primary-50: 320 100% 97%;
+    --color-primary-100: 320 94% 95%;
+    --color-primary-200: 320 83% 91%;
+    --color-primary-300: 320 78% 82%;
+    --color-primary-400: 320 84% 70%;
+    --color-primary-500: 320 82% 60%;
+    --color-primary-600: 320 71% 50%;
+    --color-primary-700: 320 77% 42%;
+    --color-primary-800: 320 75% 35%;
+    --color-primary-900: 320 69% 31%;
+    --color-primary-950: 320 86% 17%;
+  }
+  .theme-pink.dark {
+    /* Theme Color */
+    --color-primary-950: 320 100% 97%;
+    --color-primary-900: 320 94% 95%;
+    --color-primary-800: 320 83% 91%;
+    --color-primary-700: 320 78% 82%;
+    --color-primary-600: 320 84% 70%;
+    --color-primary-500: 320 82% 60%;
+    --color-primary-400: 320 71% 50%;
+    --color-primary-300: 320 77% 42%;
+    --color-primary-200: 320 75% 35%;
+    --color-primary-100: 320 69% 31%;
+    --color-primary-50: 320 86% 17%;
+  }
+  .theme-green {
+    /* Theme Color */
+    --color-primary-50: 135 86% 97%;
+    --color-primary-100: 135 83% 93%;
+    --color-primary-200: 135 80% 85%;
+    --color-primary-300: 135 76% 73%;
+    --color-primary-400: 135 73% 58%;
+    --color-primary-500: 135 70% 47%;
+    --color-primary-600: 135 77% 39%;
+    --color-primary-700: 135 70% 29%;
+    --color-primary-800: 135 66% 26%;
+    --color-primary-900: 135 62% 25%;
+    --color-primary-950: 135 84% 11%;
+  }
+  .theme-green.dark {
+    /* Theme Color */
+    --color-primary-950: 135 86% 97%;
+    --color-primary-900: 135 83% 93%;
+    --color-primary-800: 135 80% 85%;
+    --color-primary-700: 135 76% 73%;
+    --color-primary-600: 135 73% 58%;
+    --color-primary-500: 135 70% 47%;
+    --color-primary-400: 135 77% 39%;
+    --color-primary-300: 135 70% 29%;
+    --color-primary-200: 135 66% 26%;
+    --color-primary-100: 135 62% 25%;
+    --color-primary-50: 135 84% 11%;
+  }
+  .theme-cyan {
+    /* Theme Color */
+    --color-primary-50: 185 100% 97%;
+    --color-primary-100: 185 93% 90%;
+    --color-primary-200: 185 87% 82%;
+    --color-primary-300: 185 87% 69%;
+    --color-primary-400: 185 87% 53%;
+    --color-primary-500: 185 93% 43%;
+    --color-primary-600: 185 90% 36%;
+    --color-primary-700: 185 80% 31%;
+    --color-primary-800: 185 69% 27%;
+    --color-primary-900: 185 64% 24%;
+    --color-primary-950: 185 81% 15%;
+  }
+  .theme-cyan.dark {
+    /* Theme Color */
+    --color-primary-950: 236, 254, 255;
+    --color-primary-900: 207, 250, 254;
+    --color-primary-800: 165, 243, 252;
+    --color-primary-700: 103, 232, 249;
+    --color-primary-600: 34, 211, 238;
+    --color-primary-500: 6, 182, 212;
+    --color-primary-400: 8, 145, 178;
+    --color-primary-300: 14, 116, 144;
+    --color-primary-200: 21, 94, 117;
+    --color-primary-100: 22, 78, 99;
+    --color-primary-50: 8, 51, 68;
+  }
+  .theme-cyan.dark {
+    /* Theme Color */
+    --color-primary-950: 185 100% 97%;
+    --color-primary-900: 188 89% 91%;
+    --color-primary-800: 187 81% 82%;
+    --color-primary-700: 187 85% 69%;
+    --color-primary-600: 187 80% 53%;
+    --color-primary-500: 187 94% 43%;
+    --color-primary-400: 189 91% 36%;
+    --color-primary-300: 192 81% 31%;
+    --color-primary-200: 193 69% 27%;
+    --color-primary-100: 194 64% 24%;
+    --color-primary-50: 194 80% 12%;
   }
 }

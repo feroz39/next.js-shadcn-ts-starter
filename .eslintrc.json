@@ -1,3 +1,18 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "eslint:recommended", "plugin:react/recommended", "plugin:react-hooks/recommended", "prettier"],
+  "plugins": ["prettier", "react", "react-hooks"],
+  "rules": {
+    "no-unused-vars": "off",
+    "no-empty-pattern": "off",
+    "no-undef": "off",
+    "@next/next/no-img-element": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "no-console": [
+      "error",
+      {
+        "allow": ["warn", "error"]
+      }
+    ]
+  }
 }
